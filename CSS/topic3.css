@@ -1,0 +1,29 @@
+html {
+    direction: rtl;
+}
+
+.topic img {
+    max-width: 100%;
+    margin-top: 110px;
+    margin-bottom: 20px;
+}
+
+.topic {
+    line-height: 2.3;
+}
+
+.topic li:not(ul){
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.topic li:not(ol){
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.topic .text-4 {
+    text-align: center;
+    font-weight: 900;
+    font-size: 20px;
+}
