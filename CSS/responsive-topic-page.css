@@ -1,0 +1,374 @@
+/* ============================================
+   RESPONSIVE STYLES - ECO-Egypt Topic Page
+   responsive-topic-page.css
+   ============================================ */
+
+/* ---- Base / Reset ---- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar-custom {
+    background-color: #1a3c2e;
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff !important;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.navbar-brand span {
+    color: #6fcf97;
+}
+
+.nav-link {
+    color: #c8e6c9 !important;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 14px !important;
+    border-radius: 20px;
+    transition: background 0.25s, color 0.25s;
+}
+
+.nav-link:hover {
+    background-color: #6fcf97;
+    color: #1a3c2e !important;
+}
+
+/* Mobile toggle button */
+.navbar-toggler {
+    background: transparent;
+    border: 2px solid #6fcf97;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.navbar-toggler-icon {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #6fcf97;
+    position: relative;
+    transition: background 0.2s;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #6fcf97;
+    position: absolute;
+}
+
+.navbar-toggler-icon::before { top: -7px; }
+.navbar-toggler-icon::after  { top:  7px; }
+
+/* Mobile menu */
+#mobileMenu {
+    background-color: #163226;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+#mobileMenu .nav-link {
+    border-bottom: 1px solid rgba(111, 207, 151, 0.15);
+    border-radius: 0;
+    padding: 12px 8px !important;
+}
+
+#mobileMenu .nav-link:last-child {
+    border-bottom: none;
+}
+
+/* ============================================
+   TOPIC SECTION
+   ============================================ */
+.topic {
+    padding: 40px 0 60px;
+    background-color: #f0f7f3;
+    min-height: calc(100vh - 60px);
+}
+
+.topic .container {
+    max-width: 860px;
+}
+
+/* ---- Hero Image ---- */
+.topic img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+    margin: 0 auto 36px;
+    box-shadow: 0 8px 30px rgba(26, 60, 46, 0.18);
+}
+
+/* ============================================
+   TEXT BLOCKS
+   ============================================ */
+
+/* Shared heading styles */
+.topic h1,
+.topic h2 {
+    font-family: 'Cairo', sans-serif;
+    color: #1a3c2e;
+    line-height: 1.5;
+}
+
+.topic h1 {
+    font-size: clamp(1.3rem, 3vw, 1.9rem);
+    font-weight: 900;
+    margin-bottom: 16px;
+    border-right: 5px solid #6fcf97;
+    padding-right: 14px;
+}
+
+.topic h2 {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    margin-bottom: 12px;
+    border-right: 4px solid #27ae60;
+    padding-right: 12px;
+}
+
+/* Shared paragraph styles */
+.topic p {
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    color: #2d4a3a;
+    line-height: 1.9;
+    margin-bottom: 14px;
+}
+
+/* ---- text-1 ---- */
+.text-1 {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 28px 24px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 16px rgba(26, 60, 46, 0.08);
+}
+
+/* ---- text-2 (ordered list) ---- */
+.text-2 {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 28px 24px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 16px rgba(26, 60, 46, 0.08);
+}
+
+.text-2 ol {
+    padding-right: 20px;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.text-2 ol li {
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    font-weight: 700;
+    color: #1a3c2e;
+    margin-bottom: 6px;
+    line-height: 1.7;
+}
+
+.text-2 ol p {
+    margin-top: 6px;
+    margin-bottom: 20px;
+    padding-right: 4px;
+}
+
+/* ---- text-3 ---- */
+.text-3 {
+    background: linear-gradient(135deg, #1a3c2e 0%, #27ae60 100%);
+    border-radius: 14px;
+    padding: 28px 24px;
+    margin-bottom: 30px;
+}
+
+.text-3 h2 {
+    color: #ffffff;
+    border-right-color: #a8f5c2;
+}
+
+.text-3 p {
+    color: #d4f5e2;
+}
+
+/* ---- text-4 ---- */
+.text-4 {
+    background: #e8f5e9;
+    border-radius: 14px;
+    padding: 24px;
+    border-right: 6px solid #27ae60;
+}
+
+.text-4 p {
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    font-weight: 600;
+    color: #1a3c2e;
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* ---- Large tablets / small laptops (≤ 992px) ---- */
+@media (max-width: 992px) {
+    .topic {
+        padding: 30px 0 50px;
+    }
+
+    .topic img {
+        max-height: 340px;
+        border-radius: 12px;
+    }
+
+    .text-1,
+    .text-2,
+    .text-3,
+    .text-4 {
+        padding: 22px 18px;
+    }
+}
+
+/* ---- Tablets (≤ 768px) ---- */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar-custom {
+        padding: 10px 0;
+    }
+
+    .navbar-brand {
+        font-size: 1.35rem;
+    }
+
+    /* Topic */
+    .topic {
+        padding: 20px 0 40px;
+    }
+
+    .topic .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .topic img {
+        max-height: 260px;
+        border-radius: 10px;
+        margin-bottom: 24px;
+    }
+
+    .text-1,
+    .text-2,
+    .text-3,
+    .text-4 {
+        padding: 18px 16px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+    }
+
+    .text-4 {
+        border-right-width: 5px;
+    }
+}
+
+/* ---- Mobile (≤ 576px) ---- */
+@media (max-width: 576px) {
+    /* Navbar */
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    /* Topic */
+    .topic {
+        padding: 14px 0 32px;
+    }
+
+    .topic .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .topic img {
+        max-height: 200px;
+        border-radius: 8px;
+        margin-bottom: 18px;
+    }
+
+    .text-1,
+    .text-2,
+    .text-3,
+    .text-4 {
+        padding: 16px 14px;
+        margin-bottom: 16px;
+        border-radius: 10px;
+    }
+
+    .topic h1 {
+        border-right-width: 4px;
+        padding-right: 10px;
+    }
+
+    .topic h2 {
+        border-right-width: 3px;
+        padding-right: 10px;
+    }
+
+    .text-2 ol {
+        padding-right: 16px;
+    }
+
+    .text-4 {
+        border-right-width: 4px;
+        padding: 14px 12px;
+    }
+}
+
+/* ---- Very small phones (≤ 380px) ---- */
+@media (max-width: 380px) {
+    .navbar-brand {
+        font-size: 1.05rem;
+    }
+
+    .topic img {
+        max-height: 160px;
+    }
+
+    .text-1,
+    .text-2,
+    .text-3,
+    .text-4 {
+        padding: 12px 10px;
+    }
+
+    .topic p,
+    .text-2 ol li {
+        font-size: 0.88rem;
+    }
+}
