@@ -23,11 +23,11 @@
     <nav class="navbar-custom">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <a class="navbar-brand" href="#">ECO<span>-Egypt</span></a>
+                <a class="navbar-brand" href="#home">ECO<span>-Egypt</span></a>
 
                 <!-- Desktop Nav -->
                 <div class="d-none d-md-flex align-items-center gap-2">
-                    <a href="#" class="nav-link">الصفحة الرئيسية</a>
+                    <a href="#home" class="nav-link">الصفحة الرئيسية</a>
                     <a href="#vision" class="nav-link">رؤية الموقع</a>
                     <a href="#topics" class="nav-link">المقالات</a>
                     <a href="#about" class="nav-link">من أكون</a>
@@ -43,8 +43,8 @@
 
             <!-- Mobile Menu -->
             <div class="collapse" id="mobileMenu">
-                <div class="d-flex flex-column py-3 gap-2">
-                    <a href="#" class="nav-link">الصفحة الرئيسية</a>
+                <div class="d-flex flex-column gap-3">
+                    <a href="#home" class="nav-link">الصفحة الرئيسية</a>
                     <a href="#vision" class="nav-link">رؤية الموقع</a>
                     <a href="#topics" class="nav-link">المقالات</a>
                     <a href="#about" class="nav-link">من أكون</a>
@@ -72,6 +72,7 @@
         </div>
     </section>
 
+    
     <!-- ===== STATS ===== -->
     <div class="stats-bar">
         <div class="container">
@@ -104,6 +105,17 @@
         </div>
     </div>
 
+    <!-- ==== Start Intro Video -->
+    <div class="intro-video">
+        <div class="container">
+            <div class="text">
+                <h2>مقدمة</h2>
+                <p>شاهد الفديو التوضيحي و ابدأ رحلتك نحو حماية البيئة</p>
+            </div>
+            <video src=""></video>
+        </div>
+    </div>
+    
     <!-- ===== VISION ===== -->
     <section class="info-web" id="vision">
         <div class="container" data-aos="fade-up" data-aos-duration="600" data-aos-once="t">
@@ -175,7 +187,7 @@
                             <div class=" card-img-placeholder bg-success">
                                 <i class="fas fa-plate-wheat text-white"></i>
                             </div>
-                            <span class="card-category">البيئة</span>
+                            <span class="card-category" id="topic-1">البيئة</span>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">حماية البيئة المصرية</h5>
@@ -191,7 +203,7 @@
                             <div class=" card-img-placeholder gold">
                                 <i class="fas fa-trash-can text-white"></i>
                             </div>
-                            <span class="card-category">التكنولوجيا</span>
+                            <span class="card-category" id="topic-2">التكنولوجيا</span>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">المخلفات الإلكترونية</h5>
@@ -209,7 +221,7 @@
                             <div class="card-img-placeholder">
                                 <i class="fas fa-database text-white"></i>
                             </div>
-                            <span class="card-category">الطاقة</span>
+                            <span class="card-category" id="topic-3">الطاقة</span>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">التلوث الخفي</h5>
@@ -300,19 +312,18 @@
                 <div class="col-6 col-lg-2 offset-lg-1">
                     <p class="footer-title">روابط سريعة</p>
                     <ul class="footer-links">
-                        <li><a href="#">الصفحة الرئيسية</a></li>
-                        <li><a href="#">رؤية الموقع</a></li>
-                        <li><a href="#">المقالات</a></li>
-                        <li><a href="#">من أكون</a></li>
+                        <li><a href="#home">الصفحة الرئيسية</a></li>
+                        <li><a href="#vision">رؤية الموقع</a></li>
+                        <li><a href="#topics">المقالات</a></li>
+                        <li><a href="#about">من أكون</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2">
                     <p class="footer-title">المواضيع</p>
                     <ul class="footer-links">
-                        <li><a href="#">البيئة</a></li>
-                        <li><a href="#">التكنولوجيا</a></li>
-                        <li><a href="#">الطاقة</a></li>
-                        <li><a href="#">الزراعة</a></li>
+                        <li><a href="#topic-1">البيئة</a></li>
+                        <li><a href="#topic-2">التكنولوجيا</a></li>
+                        <li><a href="#topic-3">الطاقة</a></li>
                     </ul>
                 </div>
             </div>
