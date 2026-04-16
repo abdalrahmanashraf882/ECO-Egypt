@@ -1,671 +1,1398 @@
 :root {
-            --eco-green: #1a7a4a;
-            --eco-light: #4caf7d;
-            --eco-dark: #0d3d26;
-            --eco-gold: #c9a84c;
-            --eco-cream: #f5f0e8;
-            --eco-white: #fafff8;
-        }
-
-        * { box-sizing: border-box; }
-
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: var(--eco-white);
-            color: #1a1a1a;
-            overflow-x: hidden;
-        }
-
-        /* ========== NAVBAR ========== */
-        .navbar-custom {
-            background: rgba(13, 61, 38, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(201, 168, 76, 0.3);
-        }
-
-        .navbar-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--eco-gold) !important;
-            letter-spacing: 2px;
-        }
-
-        .navbar-brand span {
-            color: var(--eco-light);
-        }
-
-        .nav-link {
-            color: rgba(255,255,255,0.85) !important;
-            font-weight: 600;
-            margin: 0 8px;
-            font-size: 0.95rem;
-            position: relative;
-            transition: color 0.3s;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            right: 0;
-            width: 0;
-            height: 2px;
-            background: var(--eco-gold);
-            transition: width 0.3s;
-        }
-
-        .nav-link:hover {
-            color: var(--eco-gold) !important;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .navbar-toggler {
-            border-color: var(--eco-gold);
-        }
-
-        .navbar-toggler-icon {
-            filter: invert(1);
-        }
-
-        /* ========== LANDING PAGE ========== */
-        .landing-page {
-            min-height: 100vh;
-            background: linear-gradient(135deg, var(--eco-dark) 0%, #1a5c35 50%, var(--eco-green) 100%);
-            position: relative;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .landing-page::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image:
-                radial-gradient(circle at 20% 50%, rgba(76, 175, 125, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(201, 168, 76, 0.1) 0%, transparent 40%);
-        }
-
-        /* Animated circles */
-        .landing-page::after {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            border: 1px solid rgba(76, 175, 125, 0.2);
-            border-radius: 50%;
-            top: -100px;
-            left: -100px;
-            animation: rotateSlow 20s linear infinite;
-        }
-
-        @keyframes rotateSlow {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .landing-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            animation: fadeInUp 1s ease both;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .landing-content .eco-badge {
-            display: inline-block;
-            background: rgba(201, 168, 76, 0.15);
-            border: 1px solid var(--eco-gold);
-            color: var(--eco-gold);
-            padding: 6px 20px;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .landing-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            color: #fff;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 15px;
-        }
-
-        .landing-content h1 span {
-            color: var(--eco-gold);
-        }
-
-        .landing-content .subtitle {
-            font-size: 1.3rem;
-            color: rgba(255,255,255,0.75);
-            font-weight: 300;
-            margin-bottom: 10px;
-        }
-
-        .landing-content .tagline {
-            font-size: 1rem;
-            color: var(--eco-light);
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 40px;
-        }
-
-
-        .btn-eco-primary {
-            background: var(--eco-gold);
-            color: var(--eco-dark);
-            border: none;
-            padding: 14px 40px;
-            border-radius: 50px;
-            font-family: 'Cairo', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            box-shadow: 0 8px 30px rgba(201, 168, 76, 0.35);
-        }
-
-        .btn-eco-primary:hover {
-            background: #fff;
-            color: var(--eco-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(201, 168, 76, 0.4);
-        }
-
-        .btn-eco-outline {
-            background: transparent;
-            color: #fff;
-            border: 2px solid rgba(255,255,255,0.5);
-            padding: 14px 40px;
-            border-radius: 50px;
-            font-family: 'Cairo', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-
-        .btn-eco-outline:hover {
-            border-color: #fff;
-            background: rgba(255,255,255,0.1);
-            color: #fff;
-        }
-
-        /* Scroll indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-            animation: bounce 2s infinite;
-        }
-
-        .scroll-indicator i {
-            color: rgba(255,255,255,0.5);
-            font-size: 1.5rem;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-10px); }
-        }
-
-        /* ========== STATS BAR ========== */
-        .stats-bar {
-            background: var(--eco-dark);
-            padding: 25px 0;
-        }
-
-        .stat-item {
-            text-align: center;
-            color: #fff;
-            padding: 10px;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--eco-gold);
-            display: block;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.6);
-            margin-top: 5px;
-        }
-
-        /* ========== SECTION HEADINGS ========== */
-        .section-heading {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-heading .overline {
-            color: var(--eco-green);
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 12px;
-        }
-
-        .section-heading h2 {
-            font-family: 'Cairo', sans-serif;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            font-weight: 900;
-            color: var(--eco-dark);
-            margin-bottom: 15px;
-        }
-
-        .section-heading p {
-            color: #666;
-            font-size: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .divider {
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(to right, var(--eco-green), var(--eco-gold));
-            margin: 15px auto;
-            border-radius: 2px;
-        }
-
-        /* ========== INFO SECTION ========== */
-        .info-web {
-            padding: 100px 0;
-            background: var(--eco-cream);
-        }
-
-        .info-web .text-content h2 {
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
-            font-weight: 900;
-            color: var(--eco-dark);
-            margin-bottom: 20px;
-        }
-
-        .info-web .text-content p {
-            color: #555;
-            font-size: 1.05rem;
-            line-height: 2;
-        }
-
-        .info-image-wrapper {
-            position: relative;
-        }
-
-        .info-image-wrapper::before {
-            content: '';
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            width: 100%;
-            height: 100%;
-            border: 3px solid var(--eco-green);
-            border-radius: 20px;
-            z-index: 0;
-        }
-
-        .info-image-wrapper img {
-            width: 100%;
-            border-radius: 20px;
-            position: relative;
-            z-index: 1;
-            object-fit: cover;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .feature-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--eco-green), var(--eco-light));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .feature-icon i {
-            color: #fff;
-            font-size: 1.1rem;
-        }
-
-        .feature-text h5 {
-            font-weight: 700;
-            color: var(--eco-dark);
-            margin-bottom: 4px;
-        }
-
-        .feature-text p {
-            color: #777;
-            font-size: 0.9rem;
-            margin: 0;
-        }
-
-        /* ========== TOPICS / CARDS ========== */
-        .topics {
-            padding: 100px 0;
-            background: var(--eco-white);
-        }
-
-        .eco-card {
-            background: #fff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            height: 100%;
-            border: 1px solid rgba(26, 122, 74, 0.1);
-        }
-
-        .eco-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 60px rgba(26, 122, 74, 0.2);
-        }
-
-        .eco-card .card-img-top {
-            height: 350px;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .eco-card:hover .card-img-top {
-            transform: scale(1.05);
-        }
-
-        .eco-card .img-wrapper {
-            overflow: hidden;
-            position: relative;
-        }
-
-        .eco-card .img-wrapper::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(13,61,38,0.4), transparent);
-        }
-
-        .eco-card .card-category {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--eco-gold);
-            color: var(--eco-dark);
-            padding: 4px 14px;
-            border-radius: 50px;
-            font-size: 0.78rem;
-            font-weight: 700;
-            z-index: 1;
-        }
-
-        .eco-card .card-body {
-            padding: 25px;
-        }
-
-        .eco-card .card-title {
-            font-weight: 800;
-            color: var(--eco-dark);
-            font-size: 1.15rem;
-            margin-bottom: 10px;
-        }
-
-        .eco-card .card-text {
-            color: #777;
-            font-size: 0.9rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .btn-eco-card {
-            background: linear-gradient(135deg, var(--eco-green), var(--eco-light));
-            color: #fff;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-family: 'Cairo', sans-serif;
-            font-weight: 700;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-
-        .btn-eco-card:hover {
-            transform: translateX(-5px);
-            box-shadow: 0 8px 20px rgba(26, 122, 74, 0.35);
-            color: #fff;
-        }
-
-        /* Placeholder image for cards */
-        .card-img-placeholder {
-            height: 350px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-        }
-
-        .card-img-placeholder.green {
-            background: linear-gradient(135deg, #1a7a4a, #4caf7d);
-        }
-
-        .card-img-placeholder.teal {
-            background: linear-gradient(135deg, #0d6e6e, #2db8b8);
-        }
-
-        .card-img-placeholder.gold {
-            background: linear-gradient(135deg, #7a5c1a, #c9a84c);
-        }
-
-        /* ========== ABOUT ========== */
-        .about {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--eco-dark) 0%, #1a5c35 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 50%;
-            top: -200px;
-            right: -200px;
-        }
-
-        .about .text-content h2 {
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
-            font-weight: 900;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        .about .text-content p {
-            color: rgba(255,255,255,0.75);
-            font-size: 1.05rem;
-            line-height: 2;
-        }
-
-        .about .img-wrapper {
-            position: relative;
-        }
-
-        .about .img-wrapper::before {
-            content: '';
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            width: 100%;
-            height: 100%;
-            border: 3px solid var(--eco-gold);
-            border-radius: 20px;
-            z-index: 0;
-        }
-
-        .about .img-wrapper img {
-            width: 100%;
-            border-radius: 20px;
-            position: relative;
-            z-index: 1;
-            object-fit: cover;
-        }
-
-        .about-img-placeholder {
-            height: 350px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, rgba(76,175,125,0.3), rgba(201,168,76,0.3));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .skill-bar {
-            margin-bottom: 20px;
-        }
-
-        .skill-bar .skill-name {
-            display: flex;
-            justify-content: space-between;
-            color: rgba(255,255,255,0.85);
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .skill-bar .progress {
-            height: 6px;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.1);
-        }
-
-        .skill-bar .progress-bar {
-            border-radius: 10px;
-            background: linear-gradient(to right, var(--eco-light), var(--eco-gold));
-        }
-
-        /* ========== FOOTER ========== */
-        .footer {
-            background: #0a2518;
-            padding: 60px 0 30px;
-        }
-
-        .footer-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--eco-gold);
-        }
-
-        .footer-brand span {
-            color: var(--eco-light);
-        }
-
-        .footer-desc {
-            color: rgba(255,255,255,0.5);
-            font-size: 0.9rem;
-            margin-top: 10px;
-            line-height: 1.8;
-        }
-
-        .footer-title {
-            color: #fff;
-            font-weight: 700;
-            margin-bottom: 20px;
-            font-size: 1rem;
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: rgba(255,255,255,0.5);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--eco-gold);
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .social-icon {
-            width: 42px;
-            height: 42px;
-            background: rgba(255,255,255,0.07);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255,255,255,0.6);
-            font-size: 1rem;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-
-        .social-icon:hover {
-            background: var(--eco-green);
-            border-color: var(--eco-green);
-            color: #fff;
-            transform: translateY(-3px);
-        }
-
-        .footer-divider {
-            border-color: rgba(255,255,255,0.08);
-            margin: 40px 0 25px;
-        }
-
-        .footer-bottom {
-            color: rgba(255,255,255,0.35);
-            font-size: 0.82rem;
-            text-align: center;
-        }
-
-        /* ========== RESPONSIVE ========== */
-        @media (max-width: 768px) {
-            .info-image-wrapper { margin-top: 40px; }
-            .about .img-wrapper { margin-bottom: 40px; }
-            .about .row { flex-direction: column-reverse; }
-        }
+    --eco-green: #1a7a4a;
+    --eco-light: #4caf7d;
+    --eco-dark: #0d3d26;
+    --eco-gold: #c9a84c;
+    --eco-cream: #f5f0e8;
+    --eco-white: #fafff8;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--eco-white);
+    color: #1a1a1a;
+    overflow-x: hidden;
+}
+
+/* ========== NAVBAR ========== */
+.navbar-custom {
+    background: rgba(13, 61, 38, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    right: 0;       
+    width: 100%;    
+    z-index: 1000;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+}
+
+@media (max-width: 768px) {
+    .navbar-custom { right: 0; width: 100%; }  /* ← أضف ده */
+    .info-image-wrapper { margin-top: 40px; }
+    .about .img-wrapper { margin-bottom: 40px; }
+    .about .row { flex-direction: column-reverse; }
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--eco-gold) !important;
+    letter-spacing: 2px;
+}
+
+.navbar-brand span {
+    color: var(--eco-light);
+}
+
+.nav-link {
+    color: rgba(255,255,255,0.85) !important;
+    font-weight: 600;
+    margin: 0 8px;
+    font-size: 0.95rem;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: var(--eco-gold);
+    transition: width 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--eco-gold) !important;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-toggler {
+    border-color: var(--eco-gold);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* ========== LANDING PAGE ========== */
+.landing-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--eco-dark) 0%, #1a5c35 50%, var(--eco-green) 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.landing-page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(76, 175, 125, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(201, 168, 76, 0.1) 0%, transparent 40%);
+}
+
+/* Animated circles */
+.landing-page::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border: 1px solid rgba(76, 175, 125, 0.2);
+    border-radius: 50%;
+    top: -100px;
+    left: -100px;
+    animation: rotateSlow 20s linear infinite;
+}
+
+@keyframes rotateSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.landing-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    animation: fadeInUp 1s ease both;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.landing-content .eco-badge {
+    background: rgba(201, 168, 76, 0.15);
+    border: 1px solid var(--eco-gold);
+    color: var(--eco-gold);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    transform: translate(50%, -100%);
+    position: absolute;
+}
+
+.landing-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.landing-content h1 span {
+    color: var(--eco-gold);
+}
+
+.landing-content .subtitle {
+    font-size: 1.3rem;
+    color: rgba(255,255,255,0.75);
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.landing-content .tagline {
+    font-size: 1rem;
+    color: var(--eco-light);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+
+.btn-eco-primary {
+    background: var(--eco-gold);
+    color: var(--eco-dark);
+    border: none;
+    padding: 14px 40px;
+    border-radius: 50px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    box-shadow: 0 8px 30px rgba(201, 168, 76, 0.35);
+}
+
+.btn-eco-primary:hover {
+    background: #fff;
+    color: var(--eco-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(201, 168, 76, 0.4);
+}
+
+.span-2:hover {
+    background-color: var(--eco-cream);
+    color: var(--eco-green);
+}
+
+.btn-eco-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255,255,255,0.5);
+    padding: 14px 40px;
+    border-radius: 50px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.btn-eco-outline:hover {
+    border-color: #fff;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator i {
+    color: rgba(255,255,255,0.5);
+    font-size: 1.5rem;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+/* ========== STATS BAR ========== */
+.stats-bar {
+    background: var(--eco-dark);
+    padding: 25px 0;
+}
+
+.stat-item {
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--eco-gold);
+    display: block;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    margin-top: 5px;
+}
+
+/* ========== SECTION HEADINGS ========== */
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-heading .overline {
+    color: var(--eco-green);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: var(--eco-dark);
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    color: #666;
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, var(--eco-green), var(--eco-gold));
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+/* ========== INFO SECTION ========== */
+.info-web {
+    padding: 100px 0;
+    background: var(--eco-cream);
+}
+
+.info-web .text-content h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 900;
+    color: var(--eco-dark);
+    margin-bottom: 20px;
+}
+
+.info-web .text-content p {
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 2;
+}
+
+.info-image-wrapper {
+    position: relative;
+}
+
+.info-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--eco-green);
+    border-radius: 20px;
+    z-index: 0;
+}
+
+.info-image-wrapper img {
+    width: 100%;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.feature-icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--eco-green), var(--eco-light));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.feature-icon i {
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.feature-text h5 {
+    font-weight: 700;
+    color: var(--eco-dark);
+    margin-bottom: 4px;
+}
+
+.feature-text p {
+    color: #777;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* ========== TOPICS / CARDS ========== */
+.topics {
+    padding: 100px 0;
+    background: var(--eco-white);
+}
+
+.eco-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    border: 1px solid rgba(26, 122, 74, 0.1);
+}
+
+.eco-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 60px rgba(26, 122, 74, 0.2);
+}
+
+.eco-card .card-img-top {
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.eco-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.eco-card .img-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.eco-card .img-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13,61,38,0.4), transparent);
+}
+
+.eco-card .card-category {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--eco-gold);
+    color: var(--eco-dark);
+    padding: 4px 14px;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.eco-card .card-body {
+    padding: 25px;
+}
+
+.eco-card .card-title {
+    font-weight: 800;
+    color: var(--eco-dark);
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.eco-card .card-text {
+    color: #777;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.btn-eco-card {
+    background: linear-gradient(135deg, var(--eco-green), var(--eco-light));
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.btn-eco-card:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 8px 20px rgba(26, 122, 74, 0.35);
+    color: #fff;
+}
+
+/* Placeholder image for cards */
+.card-img-placeholder {
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.card-img-placeholder.green {
+    background: linear-gradient(135deg, #1a7a4a, #4caf7d);
+}
+
+.card-img-placeholder.teal {
+    background: linear-gradient(135deg, #0d6e6e, #2db8b8);
+}
+
+.card-img-placeholder.gold {
+    background: linear-gradient(135deg, #7a5c1a, #c9a84c);
+}
+
+/* ========== ABOUT ========== */
+.about {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--eco-dark) 0%, #1a5c35 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 50%;
+    top: -200px;
+    right: -200px;
+}
+
+.about .text-content h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.about .text-content p {
+    color: rgba(255,255,255,0.75);
+    font-size: 1.05rem;
+    line-height: 2;
+}
+
+.about .img-wrapper {
+    position: relative;
+}
+
+.about .img-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--eco-gold);
+    border-radius: 20px;
+    z-index: 0;
+}
+
+.about .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.about-img-placeholder {
+    height: 350px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(76,175,125,0.3), rgba(201,168,76,0.3));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.skill-bar {
+    margin-bottom: 20px;
+}
+
+.skill-bar .skill-name {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.skill-bar .progress {
+    height: 6px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+}
+
+.skill-bar .progress-bar {
+    border-radius: 10px;
+    background: linear-gradient(to right, var(--eco-light), var(--eco-gold));
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    background: #0a2518;
+    padding: 60px 0 30px;
+}
+
+.footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--eco-gold);
+}
+
+.footer-brand span {
+    color: var(--eco-light);
+}
+
+.footer-desc {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+    margin-top: 10px;
+    line-height: 1.8;
+}
+
+.footer-title {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--eco-gold);
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 42px;
+    height: 42px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background: var(--eco-green);
+    border-color: var(--eco-green);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.footer-divider {
+    border-color: rgba(255,255,255,0.08);
+    margin: 40px 0 25px;
+}
+
+.footer-bottom {
+    color: rgba(255,255,255,0.35);
+    font-size: 0.82rem;
+    text-align: center;
+}
+
+/* ============================================================
+   ACCOUNT — زر تسجيل الدخول في الـ Navbar
+   ============================================================
+   هذا الزر يُستبدل الـ div القديم ويظهر في الـ Desktop Nav
+   يتضمن: أيقونة المستخدم + نص "تسجيل الدخول"
+   ============================================================ */
+.login-trigger-btn {
+    /* التصميم الأساسي للزر: حدود ذهبية + خلفية شفافة */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1.5px solid var(--eco-gold);
+    color: var(--eco-gold);
+    padding: 7px 18px;
+    border-radius: 50px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    /* الانتقال السلس عند Hover */
+    transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+    letter-spacing: 0.5px;
+}
+
+/* تأثير Hover للزر: يمتلئ بلون ذهبي */
+.login-trigger-btn:hover {
+    background: var(--eco-gold);
+    color: var(--eco-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(201, 168, 76, 0.35);
+}
+
+/* أيقونة المستخدم داخل الزر */
+.login-trigger-btn i {
+    font-size: 0.9rem;
+}
+
+
+/* ============================================================
+   LOGIN MODAL OVERLAY — الطبقة الخلفية الداكنة
+   ============================================================
+   تغطي كامل الشاشة وتُعتّم الصفحة خلف النافذة
+   تُفعَّل بإضافة class "active" عبر JavaScript
+   ============================================================ */
+.login-overlay {
+    /* تثبيت التغطية على كامل الشاشة */
+    position: fixed;
+    inset: 0;                              /* top:0, right:0, bottom:0, left:0 */
+    /* لون الخلفية الداكن الشفاف */
+    background: rgba(8, 28, 18, 0.85);
+    /* Blur للمحتوى خلف النافذة */
+    backdrop-filter: blur(8px);
+    /* يظهر فوق الـ navbar وكل العناصر */
+    z-index: 9999;
+    /* توسيط البطاقة أفقياً وعمودياً */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    /* مخفي بالكامل في البداية:
+       - opacity: 0     → شفاف بصرياً
+       - visibility     → مخفي كلياً (يمنع backdrop-filter من التأثير على الصفحة)
+       - pointer-events → لا يستقبل أي ضغطات */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0.35s;
+}
+
+/* حالة "مفتوح" — تُضاف بواسطة JavaScript عند الضغط على الزر */
+.login-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+
+/* ============================================================
+   LOGIN CARD — البطاقة الرئيسية للنافذة
+   ============================================================
+   تصميم مقسوم (Split Layout):
+   - الجانب الأيمن (RTL): فورم تسجيل الدخول
+   - الجانب الأيسر: لوحة الهوية البصرية لـ ECO-Egypt
+   ============================================================ */
+.login-card {
+    /* أبعاد البطاقة */
+    width: 100%;
+    max-width: 900px;
+    min-height: 560px;
+    /* التخطيط المقسوم: عمودين جنباً إلى جنب */
+    display: flex;
+    flex-direction: row-reverse;          /* RTL: الفورم على اليمين */
+    /* التصميم البصري */
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    /* ظل عميق يُبرز البطاقة */
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 168, 76, 0.15);
+    position: relative;
+    /* الحركة: تبدأ مُصغّرة وتكبر لحجمها الطبيعي */
+    transform: scale(0.92) translateY(30px);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* عند فتح الـ overlay تعود البطاقة لحجمها الطبيعي */
+.login-overlay.active .login-card {
+    transform: scale(1) translateY(0);
+}
+
+
+/* ============================================================
+   LOGIN CLOSE BUTTON — زر الإغلاق (X)
+   ============================================================ */
+.login-close-btn {
+    /* تثبيت الزر في الزاوية العلوية اليسرى */
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 10;
+    /* تصميم الزر: دائري + خلفية فاتحة */
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.08);
+    color: #666;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.login-close-btn:hover {
+    background: rgba(220, 50, 50, 0.12);
+    color: #c0392b;
+    transform: rotate(90deg);             /* دوران 90 درجة عند Hover */
+}
+
+
+/* ============================================================
+   BRAND SIDE — الجانب الأيسر: لوحة الهوية البصرية
+   ============================================================
+   يحتوي على: الشعار + الوصف + قائمة المميزات
+   خلفية تدرجية خضراء تتناسب مع هوية ECO-Egypt
+   ============================================================ */
+.login-brand-side {
+    /* نصف عرض البطاقة */
+    width: 42%;
+    flex-shrink: 0;
+    /* التدرج اللوني المميز للـ ECO-Egypt */
+    background: linear-gradient(145deg, var(--eco-dark) 0%, #1a5c35 60%, var(--eco-green) 100%);
+    /* توسيط المحتوى */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ---- دوائر الديكور المتحركة في خلفية الجانب الأيسر ---- */
+/* كل دائرة لها حجم وموقع وسرعة دوران مختلفة */
+.login-deco-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: loginCircleRotate 20s linear infinite;
+}
+
+/* الدائرة الكبيرة — خلف المحتوى */
+.login-deco-circle--1 {
+    width: 350px;
+    height: 350px;
+    top: -80px;
+    right: -80px;
+}
+
+/* الدائرة المتوسطة — وسط اليمين */
+.login-deco-circle--2 {
+    width: 220px;
+    height: 220px;
+    bottom: -60px;
+    left: -40px;
+    animation-duration: 15s;
+    animation-direction: reverse;         /* اتجاه دوران عكسي */
+}
+
+/* الدائرة الصغيرة — ألوانها أكثر وضوحاً */
+.login-deco-circle--3 {
+    width: 120px;
+    height: 120px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: rgba(201, 168, 76, 0.2);
+    animation-duration: 10s;
+}
+
+/* حركة الدوران المتواصل للدوائر الزخرفية */
+@keyframes loginCircleRotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* الدائرة الصغيرة لها نقطة تحول مختلفة */
+.login-deco-circle--3 {
+    transform-origin: center;
+}
+
+/* ---- محتوى الجانب الأيسر ---- */
+.login-brand-content {
+    position: relative;
+    z-index: 2;                           /* فوق الدوائر الزخرفية */
+    text-align: center;
+    color: #fff;
+}
+
+/* أيقونة الورقة الكبيرة */
+.login-brand-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(201, 168, 76, 0.2);
+    border: 2px solid rgba(201, 168, 76, 0.5);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--eco-gold);
+    margin: 0 auto 20px;
+    /* حركة الطفو المستمرة */
+    animation: loginIconFloat 3s ease-in-out infinite;
+}
+
+@keyframes loginIconFloat {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-8px); }
+}
+
+/* اسم الموقع في الجانب الأيسر */
+.login-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+/* اللون الذهبي لـ "-Egypt" */
+.login-brand-name span {
+    color: var(--eco-gold);
+}
+
+/* الوصف المختصر للموقع */
+.login-brand-desc {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+/* قائمة المميزات بأيقونات */
+.login-brand-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;                    /* محاذاة يمين (RTL) */
+}
+
+.login-brand-features li {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.88rem;
+    padding: 7px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.login-brand-features li:last-child {
+    border-bottom: none;
+}
+
+/* أيقونة الـ check-circle الخضراء */
+.login-brand-features li i {
+    color: var(--eco-light);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+
+/* ============================================================
+   FORM SIDE — الجانب الأيمن: فورم تسجيل الدخول
+   ============================================================ */
+.login-form-side {
+    /* باقي العرض — يمتد ليملأ المساحة المتبقية */
+    flex: 1;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+    overflow-y: auto;
+}
+
+/* ---- رأس الفورم: العنوان والوصف ---- */
+.login-form-header {
+    margin-bottom: 32px;
+}
+
+.login-form-header h2 {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 900;
+    color: var(--eco-dark);
+    margin-bottom: 6px;
+}
+
+.login-form-header p {
+    color: #888;
+    font-size: 0.93rem;
+}
+
+
+/* ============================================================
+   FORM FIELDS — حقول الفورم
+   ============================================================ */
+
+/* المجموعة الكاملة لكل حقل (Label + Input + رسالة الخطأ) */
+.login-field-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* عنوان الحقل (Label) مع أيقونته */
+.login-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--eco-dark);
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.login-label i {
+    color: var(--eco-green);
+    font-size: 0.82rem;
+}
+
+/* حقل الإدخال الأساسي */
+.login-input {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 12px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.93rem;
+    color: #1a1a1a;
+    background: #fafafa;
+    /* الانتقال السلس عند التركيز */
+    transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+    outline: none;
+}
+
+/* حالة التركيز: حدود خضراء + ظل خفيف */
+.login-input:focus {
+    border-color: var(--eco-green);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(26, 122, 74, 0.08);
+}
+
+/* حالة الخطأ: حدود حمراء */
+.login-field-group.has-error .login-input {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.08);
+}
+
+/* رسالة الخطأ — مخفية بالافتراضي وتظهر عند وجود خطأ */
+.login-error-msg {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #e74c3c;
+    font-size: 0.8rem;
+    margin-top: 6px;
+    /* الإخفاء الافتراضي بالـ opacity */
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.2s, height 0.2s;
+}
+
+/* ظهور رسالة الخطأ عند وجود class has-error */
+.login-field-group.has-error .login-error-msg {
+    opacity: 1;
+    height: 22px;
+}
+
+
+/* ============================================================
+   PASSWORD FIELD — حقل كلمة المرور مع زر الإظهار/الإخفاء
+   ============================================================ */
+.login-password-wrapper {
+    position: relative;
+}
+
+/* زر العين لإظهار/إخفاء كلمة المرور — يُثبَّت داخل الحقل */
+.login-toggle-pass {
+    position: absolute;
+    left: 14px;                           /* على اليسار في RTL */
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 0.95rem;
+    padding: 4px;
+    transition: color 0.2s;
+}
+
+.login-toggle-pass:hover {
+    color: var(--eco-green);
+}
+
+/* إضافة padding يسار للـ input ليبقى النص بعيداً عن زر العين */
+.login-password-wrapper .login-input {
+    padding-left: 44px;
+}
+
+
+/* ============================================================
+   EXTRAS — "تذكرني" + "نسيت كلمة المرور"
+   ============================================================ */
+.login-extras {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+/* Checkbox مخصص "تذكرني" */
+.login-remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #666;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* إخفاء الـ checkbox الأصلي */
+.login-remember input[type="checkbox"] {
+    display: none;
+}
+
+/* الـ checkbox المخصص: مربع صغير */
+.login-checkmark {
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+}
+
+/* حالة التحديد: خلفية خضراء + علامة صح بيضاء */
+.login-remember input:checked + .login-checkmark {
+    background: var(--eco-green);
+    border-color: var(--eco-green);
+}
+
+.login-remember input:checked + .login-checkmark::after {
+    content: '✓';
+    color: #fff;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+/* رابط "نسيت كلمة المرور؟" */
+.login-forgot {
+    font-size: 0.83rem;
+    color: var(--eco-green);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.login-forgot:hover {
+    color: var(--eco-dark);
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   SUBMIT BUTTON — زر تسجيل الدخول الرئيسي
+   ============================================================ */
+.login-submit-btn {
+    width: 100%;
+    height: 52px;
+    background: linear-gradient(135deg, var(--eco-dark), var(--eco-green));
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* ظل لوني يضيف عمقاً */
+    box-shadow: 0 8px 24px rgba(13, 61, 38, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    margin-bottom: 20px;
+}
+
+.login-submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 35px rgba(13, 61, 38, 0.4);
+}
+
+.login-submit-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+/* حالة التحميل: شفافية أقل + تعطيل التفاعل */
+.login-submit-btn:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+}
+
+/* أيقونة السبينر أثناء التحميل — مخفية بالافتراضي */
+.login-spinner {
+    display: none;
+}
+
+/* إظهار السبينر عند class "loading" */
+.login-submit-btn.loading .login-spinner {
+    display: inline-block;
+}
+
+.login-submit-btn.loading .login-arrow {
+    display: none;
+}
+
+/* سهم الإرسال */
+.login-arrow {
+    font-size: 0.85rem;
+    transition: transform 0.2s;
+}
+
+.login-submit-btn:hover .login-arrow {
+    transform: translateX(-4px);          /* تحريك السهم لليسار عند Hover */
+}
+
+
+/* ============================================================
+   DIVIDER + SIGNUP — الفاصل ورابط التسجيل
+   ============================================================ */
+
+/* فاصل "أو" بين الزر ورابط التسجيل */
+.login-divider {
+    text-align: center;
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.login-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: #eee;
+}
+
+.login-divider span {
+    position: relative;
+    background: #fff;
+    padding: 0 12px;
+    color: #bbb;
+    font-size: 0.82rem;
+}
+
+/* رابط إنشاء حساب جديد */
+.login-signup-link {
+    text-align: center;
+    font-size: 0.88rem;
+    color: #888;
+    margin: 0;
+}
+
+.login-signup-link a {
+    color: var(--eco-green);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.login-signup-link a:hover {
+    color: var(--eco-dark);
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   SUCCESS STATE — حالة نجاح تسجيل الدخول
+   ============================================================
+   تظهر بدلاً من الفورم بعد الضغط على الزر (محاكاة)
+   ============================================================ */
+.login-success {
+    display: none;                        /* مخفية بالافتراضي */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 16px;
+    padding: 40px;
+    flex: 1;
+}
+
+.login-success.visible {
+    display: flex;
+}
+
+/* أيقونة الـ check الكبيرة باللون الأخضر */
+.login-success-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--eco-green), var(--eco-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
+    /* حركة ظهور مع bounce */
+    animation: loginSuccessBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes loginSuccessBounce {
+    from { transform: scale(0); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+.login-success h3 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--eco-dark);
+    margin: 0;
+}
+
+.login-success p {
+    color: #888;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+
+/* ============================================================
+   RESPONSIVE — شاشات الجوال والتابلت
+   ============================================================
+   على الشاشات الصغيرة يختفي الجانب الأيسر ويظهر الفورم فقط
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* إخفاء الجانب الأيسر على الجوال لتوفير المساحة */
+    .login-brand-side {
+        display: none;
+    }
+
+    /* الفورم يأخذ كامل عرض البطاقة */
+    .login-form-side {
+        padding: 40px 25px;
+    }
+
+    /* تصغير حجم العنوان قليلاً */
+    .login-form-header h2 {
+        font-size: 1.6rem;
+    }
+
+    /* إخفاء النص بجانب الأيقونة في الـ navbar فقط (ليس داخل القائمة) */
+    .login-trigger-btn:not(.login-trigger-mobile) span {
+        display: none;
+    }
+
+    .login-trigger-btn:not(.login-trigger-mobile) {
+        padding: 8px 12px;
+        border-radius: 50%;
+    }
+
+    /* زر الموبايل داخل القائمة: كامل العرض + نص ظاهر */
+    .login-trigger-mobile {
+        width: 100%;
+        justify-content: center;
+        border-radius: 12px;
+        padding: 10px 18px;
+    }
+}
