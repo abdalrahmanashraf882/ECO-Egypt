@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="er" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الموضوعات</title>
+    <link rel="stylesheet" href="../CSS/all.min.css">
+    <link rel="stylesheet" href="../CSS/Normalize.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/topic-menu.css">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar-custom">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a class="navbar-brand" href="../index.html">ECO<span>-Egypt</span></a>
+
+                <!-- Desktop Nav -->
+                <div class="d-none d-md-flex align-items-center gap-2">
+                    <a href="../index.html" class="nav-link">الصفحة الرئيسية</a>
+                    <a href="../index.html" class="nav-link">رؤية الموقع</a>
+                    <a href="../index.html" class="nav-link">المقالات</a>
+                    <a href="../index.html" class="nav-link">من أكون</a>
+                    <!-- ===== زر فتح نافذة تسجيل الدخول ===== -->
+                    <!-- عند الضغط على هذا الزر تنفتح نافذة تسجيل الدخول (modal) -->
+                    <button class="login-trigger-btn" id="loginTriggerBtn" aria-label="تسجيل الدخول">
+                        <i class="fas fa-user"></i>
+                        <span>تسجيل الدخول</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+                    <span class="navbar-toggler-icon">
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="collapse navbar-collapse" id="mobileMenu">
+                <div class="d-flex flex-column gap-3">
+                    <a href="#home" class="nav-link">الصفحة الرئيسية</a>
+                    <a href="#vision" class="nav-link">رؤية الموقع</a>
+                    <a href="#topics" class="nav-link">المقالات</a>
+                    <a href="#about" class="nav-link">من أكون</a>
+                    <!-- زر تسجيل الدخول في القائمة المحمولة
+                         يشترك مع نفس class الـ Desktop لكن له id مختلف -->
+                    <button class="login-trigger-btn login-trigger-mobile" id="loginTriggerBtnMobile">
+                        <i class="fas fa-user"></i>
+                        <span>تسجيل الدخول</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ======== Topics Menu ======== -->
+    <div class="topics-menu">
+        <div class="container">
+            <div class="topics">
+                <div class="card">
+                    <div class="body-card">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card-title">test</div>
+                    <div class="text">asdasdserbtbht</div>
+                    <button></button>
+                </div>
+                <div class="card">
+                    <div class="body-card">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card-title">test</div>
+                    <div class="text">asdasdserbtbht</div>
+                    <button></button>
+                </div>
+                <div class="card">
+                    <div class="body-card">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card-title">test</div>
+                    <div class="text">asdasdserbtbht</div>
+                    <button></button>
+                </div>
+                <div class="card">
+                    <div class="body-card">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card-title">test</div>
+                    <div class="text">asdasdserbtbht</div>
+                    <button></button>
+                </div>
+                <div class="card">
+                    <div class="body-card">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card-title">test</div>
+                    <div class="text">asdasdserbtbht</div>
+                    <button></button>
+                </div>
+                <div class="card">
+                    <div class="body-card">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card-title">test</div>
+                    <div class="text">asdasdserbtbht</div>
+                    <button></button>
+                </div>
+                <div class="card">
+                    <div class="body-card">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card-title">test</div>
+                    <div class="text">asdasdserbtbht</div>
+                    <button></button>
+                </div>
+                <div class="card">
+                    <div class="body-card">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card-title">test</div>
+                    <div class="text">asdasdserbtbht</div>
+                    <button></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+        <!-- ============================================================
+        نافذة تسجيل الدخول (Login Modal)
+        ============================================================
+        هذه النافذة تظهر عند الضغط على زر "تسجيل الدخول" في الـ navbar
+        تتكون من:
+            - طبقة خلفية شفافة (overlay) لتعتيم باقي الصفحة
+            - بطاقة تسجيل الدخول بتصميم مقسّم (split layout):
+                · الجانب الأيسر: لوحة ترحيبية بهوية ECO-Egypt
+                · الجانب الأيمن: فورم إدخال البيانات
+        ============================================================ -->
+        <div class="login-overlay" id="loginOverlay" role="dialog" aria-modal="true" aria-labelledby="loginModalTitle">
+
+            <!-- ===== بطاقة تسجيل الدخول الرئيسية ===== -->
+            <div class="login-card" id="loginCard">
+    
+                <!-- زر إغلاق النافذة (X) يظهر في الزاوية -->
+                <button class="login-close-btn" id="loginCloseBtn" aria-label="إغلاق نافذة تسجيل الدخول">
+                    <i class="fas fa-times"></i>
+                </button>
+    
+                <!-- ===== الجانب الأيسر: لوحة الهوية البصرية ===== -->
+                <!-- هذا الجانب يحتوي على شعار الموقع وجملة ترحيبية
+                     ويكون مخفياً على الشاشات الصغيرة لتوفير مساحة -->
+                <div class="login-brand-side">
+    
+                    <!-- دوائر الديكور المتحركة في الخلفية -->
+                    <div class="login-deco-circle login-deco-circle--1"></div>
+                    <div class="login-deco-circle login-deco-circle--2"></div>
+                    <div class="login-deco-circle login-deco-circle--3"></div>
+    
+                    <!-- المحتوى النصي للجانب الأيسر -->
+                    <div class="login-brand-content">
+                        <!-- أيقونة الورقة البيئية -->
+                        <div class="login-brand-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <!-- اسم الموقع بنفس تنسيق الـ navbar -->
+                        <h2 class="login-brand-name">ECO<span>-Egypt</span></h2>
+                        <!-- وصف مختصر للموقع -->
+                        <p class="login-brand-desc">
+                            منصتك للوعي البيئي<br>والتكنولوجيا المستدامة
+                        </p>
+                        <!-- نقاط مميزات الموقع بشكل بصري -->
+                        <ul class="login-brand-features">
+                            <li><i class="fas fa-check-circle"></i> مقالات بيئية متخصصة</li>
+                            <li><i class="fas fa-check-circle"></i> محتوى موثوق ومحدّث</li>
+                            <li><i class="fas fa-check-circle"></i> مجتمع واعٍ بيئياً</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- ===== الجانب الأيمن: فورم تسجيل الدخول ===== -->
+                <div class="login-form-side">
+    
+                    <!-- رأس الفورم: العنوان والوصف -->
+                    <div class="login-form-header">
+                        <h2 id="loginModalTitle">أهلاً بعودتك</h2>
+                        <p>سجّل دخولك للاستمتاع بكامل المحتوى</p>
+                    </div>
+    
+                    <!-- ===== فورم تسجيل الدخول الفعلي ===== -->
+                    <!-- يتضمن حقلي: البريد الإلكتروني وكلمة المرور -->
+                    <form class="login-form" id="loginForm" novalidate>
+    
+                        <!-- ---- حقل البريد الإلكتروني ---- -->
+                        <div class="login-field-group" id="emailGroup">
+                            <!-- العنوان التوضيحي للحقل -->
+                            <label class="login-label" for="loginEmail">
+                                <i class="fas fa-envelope"></i>
+                                البريد الإلكتروني
+                            </label>
+                            <!-- حقل الإدخال نفسه -->
+                            <input
+                                type="email"
+                                id="loginEmail"
+                                class="login-input"
+                                placeholder="example@email.com"
+                                autocomplete="email"
+                                required
+                                dir="ltr"
+                            >
+                            <!-- رسالة الخطأ — تظهر فقط عند الإدخال الخاطئ -->
+                            <span class="login-error-msg" id="emailError">
+                                <i class="fas fa-exclamation-circle"></i>
+                                يرجى إدخال بريد إلكتروني صحيح
+                            </span>
+                        </div>
+    
+                        <!-- ---- حقل كلمة المرور ---- -->
+                        <div class="login-field-group" id="passwordGroup">
+                            <label class="login-label" for="loginPassword">
+                                <i class="fas fa-lock"></i>
+                                كلمة المرور
+                            </label>
+                            <!-- wrapper يحتوي الحقل + زر إظهار/إخفاء كلمة المرور -->
+                            <div class="login-password-wrapper">
+                                <input
+                                    type="password"
+                                    id="loginPassword"
+                                    class="login-input"
+                                    placeholder="••••••••"
+                                    autocomplete="current-password"
+                                    required
+                                >
+                                <!-- زر المبادلة بين إظهار/إخفاء النص -->
+                                <button type="button" class="login-toggle-pass" id="togglePassword" aria-label="إظهار/إخفاء كلمة المرور">
+                                    <i class="fas fa-eye" id="togglePassIcon"></i>
+                                </button>
+                            </div>
+                            <!-- رسالة الخطأ لحقل كلمة المرور -->
+                            <span class="login-error-msg" id="passwordError">
+                                <i class="fas fa-exclamation-circle"></i>
+                                يرجى إدخال كلمة مرور (6 أحرف على الأقل)
+                            </span>
+                        </div>
+    
+                        <!-- ---- الخيارات الإضافية: "تذكرني" + "نسيت كلمة المرور" ---- -->
+                        <div class="login-extras">
+                            <!-- خيار تذكّر بيانات الدخول -->
+                            <label class="login-remember">
+                                <input type="checkbox" id="rememberMe">
+                                <span class="login-checkmark"></span>
+                                تذكّرني
+                            </label>
+                            <!-- رابط استعادة كلمة المرور -->
+                            <a href="#" class="login-forgot">نسيت كلمة المرور؟</a>
+                        </div>
+    
+                        <!-- ---- زر تسجيل الدخول ---- -->
+                        <!-- يتغير مظهره أثناء المعالجة ليُظهر حالة التحميل -->
+                        <button type="submit" class="login-submit-btn" id="loginSubmitBtn">
+                            <!-- الأيقونة المتحركة أثناء التحميل (مخفية في البداية) -->
+                            <i class="fas fa-spinner fa-spin login-spinner" id="loginSpinner"></i>
+                            <!-- النص الافتراضي للزر -->
+                            <span id="loginBtnText">تسجيل الدخول</span>
+                            <i class="fas fa-arrow-left login-arrow"></i>
+                        </button>
+    
+                        <!-- ---- فاصل بصري "أو" ---- -->
+                        <div class="login-divider">
+                            <span>أو</span>
+                        </div>
+    
+                        <!-- ---- رابط إنشاء حساب جديد ---- -->
+                        <p class="login-signup-link">
+                            ليس لديك حساب؟
+                            <a href="#">إنشاء حساب جديد</a>
+                        </p>
+    
+                    </form>
+                    <!-- نهاية الفورم -->
+    
+                </div>
+                <!-- نهاية الجانب الأيمن -->
+    
+            </div>
+            <!-- نهاية بطاقة تسجيل الدخول -->
+    
+        </div>
+        <!-- نهاية الـ modal overlay -->
+
+    <script src="../JS/aos.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="../JS/main.js"></script>
+</body>
+</html>

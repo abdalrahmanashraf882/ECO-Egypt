@@ -498,6 +498,34 @@ body {
     background: linear-gradient(135deg, #7a5c1a, #c9a84c);
 }
 
+div.btu-more {
+    text-align: center;
+    padding: 10px;
+    border-radius: 100px;
+    border: solid 3px var(--eco-gold);
+    width: 200px;
+    background-color: var(--eco-green);
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+}
+
+div.btu-more a {
+    text-decoration: none;
+    font-family: 'Cairo'; 
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--eco-dark);
+}
+
+div.btu-more:hover{
+    transition: 150ms;
+    transform: scale(1.15);
+    background-color: #ffffff;
+}
+
+
+
 /* ========== ABOUT ========== */
 .about {
     padding: 100px 0;

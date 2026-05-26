@@ -1,0 +1,30 @@
+:root {
+    --eco-green: #1a7a4a;
+    --eco-light: #4caf7d;
+    --eco-dark: #0d3d26;
+    --eco-gold: #c9a84c;
+    --eco-cream: #f5f0e8;
+    --eco-white: #fafff8;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--eco-white);
+    color: #1a1a1a;
+    overflow-x: hidden;
+}
+
+.topics-menu .topics {
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-template-rows: 250px 250px;
+    row-gap: 20px;
+    column-gap: 20px;
+}
